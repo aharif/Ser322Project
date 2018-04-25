@@ -23,8 +23,8 @@ mysql_close($con);
   <tr>
     <td>
     	<form action="table1.php" method="post">
-	    	<!--<input id="table1" type="submit" name="table1" value="Car" />-->
-			<button id="table1" type="submit" class="btn">Car</button>
+	    	<!--<input id="table1" type="submit" name="table1" value="Customer" />-->
+			<button id="table1" type="submit" class="btn">Customer information</button>
 		</form>
     </td>
     <td>
@@ -37,8 +37,8 @@ mysql_close($con);
   <tr>
     <td>
     	<form action="table2.php" method="post">
-			<!--<input id="table2" type="submit" name="table2" value="Car Component" />-->
-			<button id="table2" type="submit" class="btn">Car Component</button>
+			<!--<input id="table2" type="submit" name="table2" value="Employee" />-->
+			<button id="table2" type="submit" class="btn">Employee Information</button>
 		</form>
     </td>
     <td>
@@ -51,8 +51,8 @@ mysql_close($con);
   <tr>
     <td>
     	<form action="table3.php" method="post">
-			<!--<input id="table3" type="submit" name="table3" value="Connector" />-->
-			<button id="table3" type="submit" class="btn">Connector</button>
+			<!--<input id="table3" type="submit" name="table3" value="Prizes" />-->
+			<button id="table3" type="submit" class="btn">Prize information</button>
 		</form>
     </td>
     <td>
@@ -65,8 +65,8 @@ mysql_close($con);
   <tr>
     <td>
     	<form action="table5.php" method="post">
-			<!--<input id="table5" type="submit" name="table5" value="Can Signals" />-->
-			<button type="submit" id="table5" class="btn">CAN Signals</button>
+			<!--<input id="table5" type="submit" name="table5" value="Games" />-->
+			<button type="submit" id="table5" class="btn">Game information</button>
 		</form>
     </td>
     <td>
@@ -79,8 +79,8 @@ mysql_close($con);
   <tr>
     <td>
     	<form action="table6.php" method="post">
-			<!--<input id="table6" type="submit" name="table6" value="Controller" />-->
-			<button type="submit" id="table6" class="btn">Controller</button>
+			<!--<input id="table6" type="submit" name="table6" value="Schedule" />-->
+			<button type="submit" id="table6" class="btn">Employee Schedule</button>
 		</form>
     </td>
     <td>
@@ -94,7 +94,7 @@ mysql_close($con);
 </div>
 	
 <div style="display: flex; justify-content: center;">
-	<img  src="https://lh3.googleusercontent.com/-VueGdehOHC0/WVBdQmDHwHI/AAAAAAAABV0/8YjAGv4b2gsJm_fIS4fEYJXCaWjK3kFNwCL0BGAYYCw/h1046/SER322%2BTeam%2B10%2BUpdated%2BER%2BDiagram.jpg" align="middle"/>
+	<img  src="https://lh5.googleusercontent.com/bAPFMZSp-eI3d700ZQUOSFW8M81ppW-FTnW7IJukS98GWU0y6YWubddyT1kxTy6j4HG5k5-jtF2soXMEm3O_=w1922-h947-rw" align="middle"/>
 </div>
 </body>
 
