@@ -52,7 +52,7 @@ mysql_query($sql, $con);
 $sql = "INSERT INTO Connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES (6, 1, 'AMP',6346, 'male')";
 mysql_query($sql, $con);
 
-// SHAREEF Employee
+
 // Create Car Component Table
 $sql = "CREATE TABLE `Car Component` (
 	ComponentID int PRIMARY KEY NOT NULL,
@@ -74,9 +74,9 @@ mysql_query($sql, $con);
 $sql = "INSERT INTO `Car Component` (ComponentID, Controller, Connector, Name) VALUES (4, 5, 5, 'BrakePedal')";
 mysql_query($sql, $con);
 
-//Shareef Prizes
+//Shareef Employee
 // Create Controller Table
-$sql = "CREATE TABLE `Controller` (
+$sql = "CREATE TABLE `Prize` (
 	ControllerID int PRIMARY KEY NOT NULL,
 	CarID int NOT NULL,
 	Name varchar(255) NOT NULL,
@@ -101,35 +101,30 @@ $sql = "INSERT INTO `Controller` (ControllerID, CarID, Name, Supplier) VALUES (7
 mysql_query($sql, $con);
 
 
-//Abdul Game
+//Shareef Prizes
 // Create Car Table
-$sql = "CREATE TABLE `Car` (
-	CarID int PRIMARY KEY NOT NULL,
-	Make varchar(255) NOT NULL,
-	Model varchar(255) NOT NULL,
+$sql = "CREATE TABLE `Prizes` (
+	ID int PRIMARY KEY NOT NULL,
+	Name varchar(255) NOT NULL,
 	Type varchar(255) NOT NULL,
-	Year int NOT NULL
+	TicketValue int NOT NULL,
+	DateAdded varchar(255) NOT NULL
 )";
-mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (1, 'Honda', 'Civic', 'LE', 2005)";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (2, 'Honda', 'CR-V', 'XE', 2012)";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0001, 'Teddy', 'Stuffed Animal', 250, '8-22-2017')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (3, 'Hyndai', 'Elantra', 'n/a', 2007)";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0002, 'Lolipop', 'Edible', 10, '2-18-2018')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (4, 'Ford', 'Ranger', 'ShortCab', 2000)";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0003, 'RC hepicopter', 'Electronic', 2000, '1-22-2018')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (5, 'Toyota', 'Rav4', 'LE', 2009)";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0004, 'Sticky Hand', 'Miscellaneous', 20, '3-05-2018')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (6, 'Toyota', 'Camary', 'n/a', 2001)";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0005, 'NWNS Tshirt', 'Clothing', 500, '4-05-2018')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (7, 'BMW', 'M3', 'n/a', 1993)";
-mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (8, 'Tesla', 'Model S', 'P100D', 2015)";
-mysql_query($sql, $con);
-$sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (9, 'Audi', 'A3', 'n/a', 2016)";
-mysql_query($sql, $con);
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0006, 'Sour Straws', 'Edible', 40, '3-27-2018')";
+
+
 
 //Abdul Game Machine
 // Create CAN Signals Table
