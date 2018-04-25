@@ -1,4 +1,4 @@
-<html>
+	<html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -35,7 +35,7 @@ if (isset($_POST['add'])) {
 $sql = "select * from `controller`";
 $myData = mysql_query($sql, $con);
 
-echo "<h3>Controller Table</h3>";
+echo "<h3>Employee Schedule Table</h3>";
 echo "<table class='table table-hover'>
 <tr>
 <th>ControllerID</th>

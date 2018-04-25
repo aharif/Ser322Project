@@ -11,8 +11,8 @@ $con = @mysql_connect("localhost", "root", "");
 if(!$con) {
 	die("Cannot connect: " . mysql_error());
 }
-echo "<center><h1>Automotive Controller Database for SER 322</h1></center> <hr />";
-mysql_select_db("Cars", $con);
+echo "<center><h1>NWNS Arcade Database for SER 322</h1></center> <hr />";
+mysql_select_db("Arcades", $con);
 
 
 $sql = "SELECT DISTINCT theSignals.Name as SignalName, theSignals.Units as SigUnits, Controller.Name as ControllerName, Controller.Supplier as ConSupplier, Car.Make as CarMake, Car.Model as CarModel, Car.Year as CarYear FROM `CAN Signals` as theSignals, Controller, Car WHERE theSignals.Controller = Controller.ControllerID and Controller.CarID = Car.CarID and theSignals.Name LIKE '%Pedal%' ";

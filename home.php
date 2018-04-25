@@ -25,9 +25,9 @@ mysql_close($con);
 			</tr>
 			<tr>
 				<td>
-					<form action="table1.php" method="post">
+					<form action="table3.php" method="post">
 						<!--<input id="table1" type="submit" name="table1" value="Customer" />-->
-						<button id="table1" type="submit" class="btn">Customer information</button>
+						<button id="table3" type="submit" class="btn">Customer information</button>
 					</form>
 				</td>
 				<td>
@@ -55,9 +55,9 @@ mysql_close($con);
 			</tr>
 			<tr>
 				<td>
-					<form action="table3.php" method="post">
-						<!--<input id="table3" type="submit" name="table3" value="Prizes" />-->
-						<button id="table3" type="submit" class="btn">Prize information</button>
+					<form action="table7.php" method="post">
+						<!--<input id="table6" type="submit" name="table6" value="Schedule" />-->
+						<button type="submit" id="table7" class="btn">Employee Schedule</button>
 					</form>
 				</td>
 				<td>
@@ -70,11 +70,13 @@ mysql_close($con);
 			</tr>
 			<tr>
 				<td>
-					<form action="table5.php" method="post">
-						<!--<input id="table5" type="submit" name="table5" value="Games" />-->
-						<button type="submit" id="table5" class="btn">Game information</button>
+					<form action="table6.php" method="post">
+						<!--<input id="table6" type="submit" name="table6" value="Game machine" />-->
+						<button type="submit" id="table6" class="btn">Game Machine
+							Information</button>
 					</form>
 				</td>
+
 				<td>
 					<form action="query4.php" method="post">
 						<!--<input id="query4" type="submit" name="query4" value="All Cars Ordered by Manufacturing date" />-->
@@ -85,24 +87,25 @@ mysql_close($con);
 			</tr>
 			<tr>
 				<td>
-					<form action="table6.php" method="post">
-						<!--<input id="table6" type="submit" name="table6" value="Schedule" />-->
-						<button type="submit" id="table6" class="btn">Employee Schedule</button>
+					<form action="table4.php" method="post">
+						<!--<input id="table5" type="submit" name="table5" value="Games" />-->
+						<button type="submit" id="table4" class="btn">Game information</button>
 					</form>
 				</td>
-				<td>
-					<form action="query5.php" method="post">
-						<!--<input id="query5" type="submit" name="query5" value="All Brake and Aceleration CAN Signals" />-->
-						<button class="btn" id="query5" type="submit">All Brake and
-							Aceleration CAN Signals</button>
-					</form>
+
+				<form action="query5.php" method="post">
+					<!--<input id="query5" type="submit" name="query5" value="All Brake and Aceleration CAN Signals" />-->
+					<button class="btn" id="query5" type="submit">All Brake and
+						Aceleration CAN Signals</button>
+				</form>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<form action="table7.php" method="post">
-						<!--<input id="table6" type="submit" name="table6" value="Game machine" />-->
-						<button type="submit" id="table6" class="btn">Game Machine Information</button>
+
+					<form action="table1.php" method="post">
+						<!--<input id="table3" type="submit" name="table3" value="Prizes" />-->
+						<button id="table1" type="submit" class="btn">Prize information</button>
 					</form>
 				</td>
 			</tr>
@@ -110,8 +113,7 @@ mysql_close($con);
 	</div>
 
 	<div style="display: flex; justify-content: center;">
-		<img
-			src="https://lh5.googleusercontent.com/bAPFMZSp-eI3d700ZQUOSFW8M81ppW-FTnW7IJukS98GWU0y6YWubddyT1kxTy6j4HG5k5-jtF2soXMEm3O_=w1922-h947-rw"
+		<img src="https://lh5.googleusercontent.com/bAPFMZSp-eI3d700ZQUOSFW8M81ppW-FTnW7IJukS98GWU0y6YWubddyT1kxTy6j4HG5k5-jtF2soXMEm3O_=w1922-h947-rw"
 			align="middle" />
 	</div>
 </body>
