@@ -11,8 +11,8 @@ $con = @mysql_connect("localhost", "root", "");
 if(!$con) {
 	die("Cannot connect: " . mysql_error());
 }
-echo "<center><h1>Automotive Controller Database for SER 322</h1></center> <hr />";
-mysql_select_db("Cars", $con);
+echo "<center><h1>NWNS Arcade Database for SER 322</h1></center> <hr />";
+mysql_select_db("Arcades", $con);
 
 //update
 if (isset($_POST['update'])) {
