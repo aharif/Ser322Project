@@ -76,7 +76,7 @@ mysql_query($sql, $con);
 
 //Shareef Employee
 // Create Controller Table
-$sql = "CREATE TABLE `Prize` (
+$sql = "CREATE TABLE `Controller` (
 	ControllerID int PRIMARY KEY NOT NULL,
 	CarID int NOT NULL,
 	Name varchar(255) NOT NULL,

@@ -35,7 +35,7 @@ if (isset($_POST['add'])) {
 $sql = "select * from `controller`";
 $myData = mysql_query($sql, $con);
 
-echo "<h3>Controller Table</h3>";
+echo "<h3>Employee Schedule Table</h3>";
 echo "<table class='table table-hover'>
 <tr>
 <th>ControllerID</th>

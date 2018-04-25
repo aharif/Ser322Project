@@ -92,20 +92,14 @@ mysql_close($con);
 						<button type="submit" id="table4" class="btn">Game information</button>
 					</form>
 				</td>
-
-				<form action="query5.php" method="post">
-					<!--<input id="query5" type="submit" name="query5" value="All Brake and Aceleration CAN Signals" />-->
-					<button class="btn" id="query5" type="submit">All Brake and
-						Aceleration CAN Signals</button>
-				</form>
 				</td>
 			</tr>
 			<tr>
 				<td>
 
 					<form action="table1.php" method="post">
-						<!--<input id="table3" type="submit" name="table3" value="Prizes" />-->
-						<button id="table1" type="submit" class="btn">Prize information</button>
+						<!--<input id="table1" type="submit" name="table1" value="Prizes" />-->
+						<button id="table1" type="submit" class="btn">Prizes information</button>
 					</form>
 				</td>
 			</tr>
