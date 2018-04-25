@@ -131,7 +131,7 @@ mysql_query($sql, $con);
 $sql = "INSERT INTO `Car` (CarID, Make, Model, Type, Year) VALUES (9, 'Audi', 'A3', 'n/a', 2016)";
 mysql_query($sql, $con);
 
-//Abdul Game Machine
+//Abdul Game Card
 // Create CAN Signals Table
 $sql = "CREATE TABLE `CAN Signals` (
 	`Address` varchar(25) PRIMARY KEY NOT NULL,
