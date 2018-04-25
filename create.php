@@ -28,51 +28,53 @@ mysql_select_db("Arcades", $con);
 
 
 //SHAREEF Customer
-// Create Connector Table
-$sql = "CREATE TABLE `Connector` (
-	ConnectorID int PRIMARY KEY NOT NULL,
-	Controller int NOT NULL,
-	Manfacturer varchar(255) NOT NULL,
-	`Pin Number` int NOT NULL,
-	`Pin Type` varchar(255) NOT NULL,
-	FOREIGN KEY (Controller) REFERENCES Controller(ControllerID)
+// Create Customer Table
+$sql = "CREATE TABLE `Customer` (
+	CustomerEmail varchar(255) PRIMARY KEY NOT NULL,
+	Fname varchar(255) NOT NULL,
+	Lname varchar(255) NOT NULL,
+	DOB varchar(255) NOT NULL,
+	
+	//FOREIGN KEY (Controller) REFERENCES Controller(ControllerID)
 )";
-mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO Connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES (1, 1, 'Tyco',1315, 'male')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO Connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES (2, 1, 'Delphi',1234, 'female')";
+$sql = "INSERT INTO Customer (CustomerEmail, Fname, Lname, DOB) VALUES ('bobby@yahoo.com', 'Bobby', 'Johnson','06-02-1999')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO Connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES (3, 1, 'Yazaki',53252, 'female')";
+$sql = "INSERT INTO Customer (CustomerEmail, Fname, Lname, DOB) VALUES ('Terry@yahoo.com', 'Terry', 'Brown','01-28-1992')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO Connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES (4, 1, 'Sumitomo',36346, 'female')";
+$sql = "INSERT INTO Customer (CustomerEmail, Fname, Lname, DOB) VALUES ('bobby@yahoo.com', 'Bobby', 'Johnson','06-02-1999')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO Connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES (5, 1, 'Tyco',6364, 'male')";
-mysql_query($sql, $con);
-$sql = "INSERT INTO Connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES (6, 1, 'AMP',6346, 'male')";
-mysql_query($sql, $con);
+$sql = "INSERT INTO Customer (CustomerEmail, Fname, Lname, DOB) VALUES ('Terry@yahoo.com', 'Terry', 'Brown','01-28-1992')";
 
 
-// Create Car Component Table
-$sql = "CREATE TABLE `Car Component` (
-	ComponentID int PRIMARY KEY NOT NULL,
-	Controller int NOT NULL,
-	Connector int NOT NULL,
-	Name varchar(255) NOT NULL,
-	FOREIGN KEY (Controller) REFERENCES Controller(ControllerID),
-	FOREIGN KEY (Connector) REFERENCES Connector(ConnectorID)
+
+
+
+// Create Employee Table
+$sql = "CREATE TABLE `Employee` (
+	EmployeeID int PRIMARY KEY NOT NULL,
+	Fname varchar(255) NOT NULL,
+	Lname varchar(255) NOT NULL,
+	Sex varchar(255) NOT NULL,
+	DOB varchar(255) NOT NULL,
+	//FOREIGN KEY (Controller) REFERENCES Controller(ControllerID),
+	//FOREIGN KEY (Connector) REFERENCES Connector(ConnectorID)
 	
 )";
-mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO `Car Component` (ComponentID, Controller, Connector, Name) VALUES (1, 1, 1, 'WindowSwitchpack')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car Component` (ComponentID, Controller, Connector, Name) VALUES (2, 1, 2, 'Transmission')";
+$sql = "INSERT INTO `Car Component` (EmployeeID, Fname, Lname, Sex, DOB) VALUES (1001, Ron, Stoppable, 'Male', '10-02-1998')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car Component` (ComponentID, Controller, Connector, Name) VALUES (3, 1, 3, 'AcceleratorPedal')";
+$sql = "INSERT INTO `Car Component` (EmployeeID, Fname, Lname, Sex, DOB) VALUES (1002, Kim, Possible, 'Female', '8-18-1998')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Car Component` (ComponentID, Controller, Connector, Name) VALUES (4, 5, 5, 'BrakePedal')";
+$sql = "INSERT INTO `Car Component` (EmployeeID, Fname, Lname, Sex, DOB) VALUES (1003, Lizzie, Maguire, 'Female', '3-26-1995')";
 mysql_query($sql, $con);
+$sql = "INSERT INTO `Car Component` (EmployeeID, Fname, Lname, Sex, DOB) VALUES (1004, Raven, Baxter, 'Female', '12-10-1995')";
+mysql_query($sql, $con);
+$sql = "INSERT INTO `Car Component` (EmployeeID, Fname, Lname, Sex, DOB) VALUES (1005, Phil, Diffy, 'Male', '11-05-2121')";
+
+
 
 //Shareef Employee
 // Create Controller Table

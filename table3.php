@@ -11,48 +11,55 @@ $con = @mysql_connect("localhost", "root", "");
 if(!$con) {
 	die("Cannot connect: " . mysql_error());
 }
+<<<<<<< HEAD
+echo "<center><h1> NWNS Database </h1></center> <hr />";
+mysql_select_db("Cars", $con);
+=======
 echo "<center><h1>NWNS Arcade Database for SER 322</h1></center> <hr />";
 mysql_select_db("Arcades", $con);
+>>>>>>> 77c37b72bd85c63993b894487e6d2bc44a20436c
 
 //update
 if (isset($_POST['update'])) {
-	$UpdateQuery = "UPDATE connector SET ConnectorID='$_POST[connectorid]', Controller='$_POST[controller]', Manfacturer='$_POST[manafacturer]', `Pin Number`='$_POST[pinnumber]', `Pin Type`='$_POST[pintype]' WHERE ConnectorID='$_POST[hidden]'";  
+	$UpdateQuery = "UPDATE Customer SET CustomerEmail='$_POST[customeremail]', Fname='$_POST[fname]', Lname='$_POST[lname]', `DOB`='$_POST[dob]' WHERE CustomerEmail='$_POST[hidden]'";  
     mysql_query($UpdateQuery, $con);
 };
 
 //delete
 if (isset($_POST['delete'])) {
-	$DeleteQuery = "DELETE FROM connector WHERE ConnectorID='$_POST[hidden]'";
+	$DeleteQuery = "DELETE FROM Customer WHERE CustomerEmail='$_POST[hidden]'";
     mysql_query($DeleteQuery, $con);
 };
 
 //add
 if (isset($_POST['add'])) {
-	$AddQuery = "INSERT INTO connector (ConnectorID, Controller, Manfacturer, `Pin Number`, `Pin Type`) VALUES ('$_POST[uconnectorid]', '$_POST[ucontroller]', '$_POST[umanfacturer]', '$_POST[upinnumber]', '$_POST[upintype]')";
+	$AddQuery = "INSERT INTO Customer (`CustomerEmail`, `Fname`, `Lname`, `DOB`) VALUES ('$_POST[ucustomeremail]', '$_POST[ufname]', '$_POST[ulname]', '$_POST[udob]')";
     mysql_query($AddQuery, $con);
 };
 
-$sql = "select * from connector";
+$sql = "select * from Customer";
 $myData = mysql_query($sql, $con);
 
+<<<<<<< HEAD
+echo "<h3>Customer Table</h3>";
+=======
 echo "<h3>Customer information Table</h3>";
+>>>>>>> 77c37b72bd85c63993b894487e6d2bc44a20436c
 echo "<table class='table table-hover'>
 <tr>
-<th>ConnectorID</th>
-<th>Controller</th>
-<th>Manfacturer</th>
-<th>Pin Number</th>
-<th>Pin Type</th>
+<th>CustomerEmail</th>
+<th>Fname</th>
+<th>Lname</th>
+<th>DOB</th>
 </tr>";
 while($record = mysql_fetch_array($myData)) {
 	echo "<form action=table3.php method=post>";
 	echo "<tr>";
-	echo "<td>" . "<input type=text class='form-control' name=connectorid value=" . $record['ConnectorID'] . " </td>";
-	echo "<td>" . "<input type=text class='form-control' name=controller value=" . $record['Controller'] . " </td>"; 
-	echo "<td>" . "<input type=text class='form-control' name=manafacturer value=" . $record['Manfacturer'] . " </td>"; 
-	echo "<td>" . "<input type=text class='form-control' name=pinnumber value=" . $record['Pin Number'] . " </td>";
-	echo "<td>" . "<input type=text class='form-control' name=pintype value=" . $record['Pin Type'] . " </td>";
-	echo "<td>" . "<input type=hidden class='form-control' name=hidden value=" . $record['ConnectorID'] . " </td>";
+	echo "<td>" . "<input type=text class='form-control' name=customeremail value=" . $record['CustomerEmail'] . " </td>";
+	echo "<td>" . "<input type=text class='form-control' name=fname value=" . $record['Fname'] . " </td>"; 
+	echo "<td>" . "<input type=text class='form-control' name=lname value=" . $record['Lname'] . " </td>"; 
+	echo "<td>" . "<input type=text class='form-control' name=dob value=" . $record['DOB'] . " </td>";
+	echo "<td>" . "<input type=hidden class='form-control' name=hidden value=" . $record['CustomerEmail'] . " </td>";
 	//echo "<td>" . "<input type=submit name=update value=update" . " </td>";
 	//echo "<td>" . "<input type=submit name=delete value=delete" . " </td>";
 	echo "<td>" . "<button type=submit name=update value=update class='btn btn-primary'>update</button>" . " </td>";
@@ -62,11 +69,10 @@ while($record = mysql_fetch_array($myData)) {
 }
 echo "<form action=table3.php method=post>";
 echo "<tr>";
-echo "<td><input type=text class='form-control' name=uconnectorid></td>";
-echo "<td><input type=text class='form-control' name=ucontroller></td>";
-echo "<td><input type=text class='form-control' name=umanfacturer></td>";
-echo "<td><input type=text class='form-control' name=upinnumber></td>";
-echo "<td><input type=text class='form-control' name=upintype></td>";
+echo "<td><input type=text class='form-control' name=ucustomeremail></td>";
+echo "<td><input type=text class='form-control' name=ufname></td>";
+echo "<td><input type=text class='form-control' name=ulname></td>";
+echo "<td><input type=text class='form-control' name=udob></td>";
 //echo "<td>" . "<input type=submit name=add value=add" . " </td>";
 echo "<td>" . "<button class='btn btn-info' type=submit name=add value=add>add</button>" . " </td>";
 echo "</form>";
