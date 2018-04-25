@@ -11,8 +11,8 @@ $con = @mysql_connect("localhost", "root", "");
 if(!$con) {
 	die("Cannot connect: " . mysql_error());
 }
-echo "<center><h1>Automotive Controller Database for SER 322</h1></center> <hr />";
-mysql_select_db("Cars", $con);
+echo "<center><h1>NWNS Arcade Database for SER 322</h1></center> <hr />";
+mysql_select_db("Arcades", $con);
 
 
 $sql = "SELECT DISTINCT Connector.Manfacturer AS 'Connector Manufacturer', Connector.`Pin Type`, `Car Component`.Name AS 'Component Name', Controller.Name AS 'Controller Name' FROM Connector, `Car Component`, Controller WHERE Connector.`Pin Type` LIKE 'male' AND Connector.ConnectorID = `Car Component`.Connector AND `Car Component`.Controller = Controller.ControllerID";

@@ -126,7 +126,7 @@ $sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (00
 
 
 
-//Abdul Game Machine
+//Abdul Game Card
 // Create CAN Signals Table
 $sql = "CREATE TABLE `CAN Signals` (
 	`Address` varchar(25) PRIMARY KEY NOT NULL,

@@ -11,8 +11,10 @@ $con = @mysql_connect("localhost", "root", "");
 if(!$con) {
 	die("Cannot connect: " . mysql_error());
 }
-echo "<center><h1>NWNS Arcade Database </h1></center> <hr />";
-mysql_select_db("Cars", $con);
+
+echo "<center><h1>NWNS Arcade Database for SER 322</h1></center> <hr />";
+mysql_select_db("Arcades", $con);
+
 
 //update
 if (isset($_POST['update'])) {
@@ -35,7 +37,9 @@ if (isset($_POST['add'])) {
 $sql = "select * from Prize";
 $myData = mysql_query($sql, $con);
 
-echo "<h3>Prize Table</h3>";
+
+echo "<h3>Prizes information table</h3>";
+
 echo "<table class='table table-hover'>
 <tr>
 <th>ID</th>
