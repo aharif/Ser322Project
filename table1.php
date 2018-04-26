@@ -34,8 +34,7 @@ if (isset($_POST['add'])) {
     mysql_query($AddQuery, $con);
 }
 
-$sql = "SELECT * FROM Prizes";
-$myData = mysql_query($sql, $con);
+$myData = mysql_query("SELECT * FROM Prizes");
 
 echo "<h3>Prizes information table</h3>";
 
@@ -48,15 +47,15 @@ echo "<table class='table table-hover'>
 <th>DateAdded</th>
 </tr>";
 
-while ($record = mysql_fetch_array($myData, MYSQL_ASSOC)) {
+while ($row = mysql_fetch_array(false)) {
     echo "<form action=table1.php method=post>";
     echo "<tr>";
-    echo "<td>" . "<input type=text class='form-control' name=id value=" . $record['ID'] . " </td>";
-    echo "<td>" . "<input type=text class='form-control' name=name value=" . $record['Name'] . " </td>";
-    echo "<td>" . "<input type=text class='form-control' name=type value=" . $record['Type'] . " </td>";
-    echo "<td>" . "<input type=text class='form-control' name=ticketvalue value=" . $record['TicketValue'] . " </td>";
-    echo "<td>" . "<input type=text class='form-control' name=dateadded value=" . $record['Date Added'] . " </td>";
-    echo "<td>" . "<input type=hidden class='form-control' name=hidden value=" . $record['ID'] . " </td>";
+    echo "<td>" . "<input type=text class='form-control' name=id value=" . $row['ID'] . " </td>";
+    echo "<td>" . "<input type=text class='form-control' name=name value=" . $row['Name'] . " </td>";
+    echo "<td>" . "<input type=text class='form-control' name=type value=" . $row['Type'] . " </td>";
+    echo "<td>" . "<input type=text class='form-control' name=ticketvalue value=" . $row['TicketValue'] . " </td>";
+    echo "<td>" . "<input type=text class='form-control' name=dateadded value=" . $row['Date Added'] . " </td>";
+    echo "<td>" . "<input type=hidden class='form-control' name=hidden value=" . $row['ID'] . " </td>";
     echo "<td>" . "<button type=submit name=update value=update class='btn btn-primary'>update</button>" . " </td>";
     echo "<td>" . "<button type=submit name=delete value=delete class='btn btn-danger'>delete</button>" . " </td>";
     echo "</tr>";
