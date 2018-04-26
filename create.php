@@ -26,105 +26,118 @@ if (mysql_query($sql, $con)) {
 
 mysql_select_db("Arcades", $con);
 
+
+//SHAREEF Customer
+// Create Connector Table
 $sql = "CREATE TABLE `Customer` (
-	Email varchar(255) PRIMARY KEY NOT NULL,
-	Fname varchar(255),
-    	Lname varchar(255),
-	DateOfB varchar(255)
-	FOREIGN KEY (GameCard) REFERENCES GameCard(GameCardID)
+	CustomerID int PRIMARY KEY NOT NULL,
+	Fname varchar(255) NOT NULL,
+    Lname varchar(255) NOT NULL,
+    Email varchar(255) NOT NULL,
+	MemberType varchar(255) NOT NULL,
 )";
 mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO Customer (Email , Fname, Lname, DateOfB)VALUES ('test@asu.edu', 'test', 'lol','12-3-2013')";
+$sql = "INSERT INTO Customer (CustomerID, Fname, Lname, Email, MemberType) VALUES (001, 'test', 'lol','test@asu.edu', 'Premium')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO Customer (Email , Fname, Lname, DateOfB) VALUES ('test2@asu.edu', 'test2', 'lol2','12-3-2014')";
+$sql = "INSERT INTO Customer (CustomerID, Fname, Lname, Email, MemberType) VALUES (002, 'test2', 'lol','test2@asu.edu', 'Regular')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO Customer (Email , Fname, Lname, DateOfB) VALUES ('test3@asu.edu', 'test3', 'lol3','12-3-2015')";
+$sql = "INSERT INTO Customer (CustomerID, Fname, Lname, Email, MemberType) VALUES (003, 'test3', 'lol','test3@asu.edu', 'NonMember')";
 mysql_query($sql, $con);
 
+
+
+// Create Car Component Table
 $sql = "CREATE TABLE `Employee` (
-	SSN int PRIMARY KEY NOT NULL,
-	Fname varchar(255),
-	Lname varchar(255),
-    	EmployeeID int NOT NULL,
-	DateOfB	varchar(255) NOT NULL,
+	EmployeeID int PRIMARY KEY NOT NULL,
+	Fname int NOT NULL,
+	Lname int NOT NULL,
+    FOREIGN KEY (Schedule) References Schedule(EmployeeID)
 	
 )";
 mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO `Employee` (SSN, Fname, Lname,EmployeeID,DateOfB) VALUES (9011, 'lol1', 'ltest1',12345,'12-1-2012')";
+$sql = "INSERT INTO `Employee` (EmployeeID, Fname, Lname) VALUES (901, 'lol1', 'ltest1')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Employee` (SSN, Fname, Lname,EmployeeID,DateOfB) VALUES (9012, 'lol1', 'ltest1',12345,'12-1-2012')";
+$sql = "INSERT INTO `Employee` (EmployeeID, Fname, Lname) VALUES (902, 'lol2', 'ltest2')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Employee` (SSN, Fname, Lname,EmployeeID,DateOfB) VALUES (9013, 'lol1', 'ltest1',12345,'12-1-2012')";
+$sql = "INSERT INTO `Employee` (EmployeeID, Fname, Lname) VALUES (903, 'lol3', 'ltest3')";
 mysql_query($sql, $con);
 
 
 $sql = "CREATE TABLE `Schedule` (
+	EmployeeID int PRIMARY KEY NOT NULL,
 	StartTime int NOT NULL,
 	EndTime int NOT NULL,
 	OffDay varchar(255)
-	FOREIGN KEY (Employee) REFERENCES Employee(EmployeeID)
 	
 )";
 mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO `Schedule` (StartTime, EndTime, OffDay) VALUES (8, 19, 'Monday')";
+$sql = "INSERT INTO `Schedule` (EmployeeID, StartTime, EndTime, OffDay) VALUES (901, 8, 21, 'Monday')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Schedule` (StartTime, EndTime, OffDay) VALUES (7, 15, 'tuesday')";
+$sql = "INSERT INTO `Schedule` (EmployeeID, StartTime, EndTime, OffDay) VALUES (901, 7, 15, 'tuesday')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Schedule` (StartTime, EndTime, OffDay) VALUES (0, 23, 'Thursday')";
+$sql = "INSERT INTO `Schedule` (EmployeeID, StartTime, EndTime, OffDay) VALUES (901, 0, 23, 'Thursday')";
 mysql_query($sql, $con);
 
 
+
+// Create Car Table
 $sql = "CREATE TABLE `Prizes` (
 	ID int PRIMARY KEY NOT NULL,
-	Type varchar(255) ,
-	TicketValue int ,
-	DateAdded varchar(255) 
+	Name varchar(255) NOT NULL,
+	Type varchar(255) NOT NULL,
+	TicketValue int NOT NULL,
+	DateAdded varchar(255) NOT NULL
 )";
 // INSERT DATA TO TABLE
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Prizes` (ID, Type, TicketValue, DateAdded) VALUES (0001,  'Stuffed Animal', 250, '8-22-2017')";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0001, 'Teddy', 'Stuffed Animal', 250, '8-22-2017')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Prizes` (ID, Type, TicketValue, DateAdded) VALUES (0002,  'Edible', 10, '2-18-2018')";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0002, 'Lolipop', 'Edible', 10, '2-18-2018')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Prizes` (ID,  Type, TicketValue, DateAdded) VALUES (0003,  'Electronic', 2000, '1-22-2018')";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0003, 'RC hepicopter', 'Electronic', 2000, '1-22-2018')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Prizes` (ID, Type, TicketValue, DateAdded) VALUES (0004, 'Miscellaneous', 20, '3-05-2018')";
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0004, 'Sticky Hand', 'Miscellaneous', 20, '3-05-2018')";
 mysql_query($sql, $con);
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0005, 'NWNS Tshirt', 'Clothing', 500, '4-05-2018')";
+mysql_query($sql, $con);
+$sql = "INSERT INTO `Prizes` (ID, Name, Type, TicketValue, DateAdded) VALUES (0006, 'Sour Straws', 'Edible', 40, '3-27-2018')";
 
 
+// Create CAN Signals Table
 $sql = "CREATE TABLE `Games` (
-	GameID int PRIMARY KEY NOT NULL,	
-	GameName varchar(25),
-	TokenCost int ,
-	MinPrize int ,
-	MaxPrize int ,
+	GameName varchar(25) PRIMARY KEY NOT NULL,
+	GameID int NOT NULL,
+	TokenCost int NOT NULL,
+	MinPrize int NOT NULL,
+	MaxPrize int NOT NULL,
 )";
 mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO `Games` (GameID, GameName, TokenCost, MinPrize,MaxPrize) VALUES (691, 'lol1', 5, 10, 50)";
+$sql = "INSERT INTO `Games` (GameName, GameID, TokenCost, MinPrize,MaxPrize) VALUES ('Lol', 691, 5, 10, 50)";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Games` (GameID, GameName, TokenCost, MinPrize,MaxPrize) VALUES (692, 'lol2', 6, 15, 70)";
+$sql = "INSERT INTO `Games` (GameName, GameID, TokenCost, MinPrize,MaxPrize) VALUES ('Lol1', 693, 6, 15, 70)";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `Games` (GameID, GameName, TokenCost, MinPrize,MaxPrize) VALUES (693, 'lol3', 7, 20, 100)";
+$sql = "INSERT INTO `Games` (GameName, GameID, TokenCost, MinPrize,MaxPrize) VALUES ('Lol2', 694, 7, 20, 100)";
 mysql_query($sql, $con);
 
+
+// Create CAN Signals Table
 $sql = "CREATE TABLE `GameCard` (
-	GameCardID int PRIMARY KEY NOT NULL,
-	Type varchar(255),
-	TokenAmount int,
-    	TicketAmount int,
-	
+	Type varchar(25) PRIMARY KEY NOT NULL,
+	TokenAmount int NOT NULL,
+    TicketAmount int NOT NULL,
+	FOREIGN KEY (Customer) REFERENCES Customer(CustomerID)
 )";
 mysql_query($sql, $con);
 // INSERT DATA TO TABLE
-$sql = "INSERT INTO `GameCard` (GameCardID , Type ,TokenAmount, TicketAmount) VALUES (1234, 'Member', 1000,10000)";
+$sql = "INSERT INTO `GameCard` (Type, TokenAmount, TicketAmount) VALUES ('Regular', '100', '1000')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `GameCard` (GameCardID , Type ,TokenAmount, TicketAmount) VALUES (1235, 'non-Member', 10,10000)";
+$sql = "INSERT INTO `GameCard` (Type, TokenAmount, TicketAmount) VALUES ('non-member', '0', '0')";
 mysql_query($sql, $con);
-$sql = "INSERT INTO `GameCard` (GameCardID , Type ,TokenAmount, TicketAmount) VALUES (1236, 'Member', 1,10)";
+$sql = "INSERT INTO `GameCard` (Type, TokenAmount, TicketAmount) VALUES ('Premium', '100', '10000')";
 mysql_query($sql, $con);
 
 
