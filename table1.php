@@ -11,48 +11,52 @@ $con = @mysql_connect("localhost", "root", "");
 if(!$con) {
 	die("Cannot connect: " . mysql_error());
 }
+
 echo "<center><h1>NWNS Arcade Database for SER 322</h1></center> <hr />";
 mysql_select_db("Arcades", $con);
 
+
 //update
 if (isset($_POST['update'])) {
-	$UpdateQuery = "UPDATE car SET CarID='$_POST[carid]', Make='$_POST[make]', Model='$_POST[model]', Type='$_POST[type]', Year='$_POST[year]'  WHERE CarID='$_POST[hidden]'";  
+	$UpdateQuery = "UPDATE car SET ID='$_POST[id]', Name='$_POST[name]', Type='$_POST[type]', TicketValue='$_POST[ticketvalue]', DateAdded='$_POST[dateadded]'  WHERE ID='$_POST[hidden]'";  
     mysql_query($UpdateQuery, $con);
 };
 
 //delete
 if (isset($_POST['delete'])) {
-	$DeleteQuery = "DELETE FROM car WHERE CarID='$_POST[hidden]'";
+	$DeleteQuery = "DELETE FROM car WHERE ID='$_POST[hidden]'";
     mysql_query($DeleteQuery, $con);
 };
 
 //add
 if (isset($_POST['add'])) {
-	$AddQuery = "INSERT INTO car (CarID, Make, Model, Type, Year) VALUES ('$_POST[ucarid]', '$_POST[umake]', '$_POST[umodel]', '$_POST[utype]', '$_POST[uyear]')";
+	$AddQuery = "INSERT INTO prize (ID, Name, Type,TicketValue, DateAdded) VALUES ('$_POST[uid]', '$_POST[uname]', '$_POST[utype]', '$_POST[uticketvalue]', '$_POST[udateadded]')";
     mysql_query($AddQuery, $con);
 };
 
-$sql = "select * from car";
+$sql = "select * from Prize";
 $myData = mysql_query($sql, $con);
 
+
 echo "<h3>Prizes information table</h3>";
+
 echo "<table class='table table-hover'>
 <tr>
-<th>CarID</th>
-<th>Make</th>
-<th>Model</th>
+<th>ID</th>
+<th>Name</th>
 <th>Type</th>
-<th>Year</th>
+<th>TicketValue</th>
+<th>DateAdded</th>
 </tr>";
 while($record = mysql_fetch_array($myData)) {
 	echo "<form action=table1.php method=post>";
 	echo "<tr>";
-	echo "<td>" . "<input type=text class='form-control' name=carid value=" . $record['CarID'] . " </td>";
-	echo "<td>" . "<input type=text class='form-control' name=make value=" . $record['Make'] . " </td>"; 
-	echo "<td>" . "<input type=text class='form-control' name=model value=" . $record['Model'] . " </td>";
+	echo "<td>" . "<input type=text class='form-control' name=id value=" . $record['ID'] . " </td>"; 
+	echo "<td>" . "<input type=text class='form-control' name= name value=" . $record['Name'] . " </td>";
 	echo "<td>" . "<input type=text class='form-control' name=type value=" . $record['Type'] . " </td>";
-	echo "<td>" . "<input type=text class='form-control' name=year value=" . $record['Year'] . " </td>";
-	echo "<td>" . "<input type=hidden class='form-control' name=hidden value=" . $record['CarID'] . " </td>";
+	echo "<td>" . "<input type=text class='form-control' name=ticketvalue value=" . $record['ticketValue'] . " </td>";
+	echo "<td>" . "<input type=text class='form-control' name=dateadded value=" . $record['Date Added'] . " </td>";
+	echo "<td>" . "<input type=hidden class='form-control' name=hidden value=" . $record['ID'] . " </td>";
 	//echo "<td>" . "<input type=submit name=update value=update" . " </td>";
 	//echo "<td>" . "<input type=submit name=delete value=delete" . " </td>";
 	echo "<td>" . "<button type=submit name=update value=update class='btn btn-primary'>update</button>" . " </td>";
@@ -62,11 +66,11 @@ while($record = mysql_fetch_array($myData)) {
 }
 echo "<form action=table1.php method=post>";
 echo "<tr>";
-echo "<td><input type=text class='form-control' name=ucarid></td>";
-echo "<td><input type=text class='form-control' name=umake></td>";
-echo "<td><input type=text class='form-control' name=umodel></td>";
+echo "<td><input type=text class='form-control' name=uid></td>";
+echo "<td><input type=text class='form-control' name=uname></td>";
 echo "<td><input type=text class='form-control' name=utype></td>";
-echo "<td><input type=text class='form-control' name=uyear></td>";
+echo "<td><input type=text class='form-control' name=uticketvalue></td>";
+echo "<td><input type=text class='form-control' name=udateadded></td>";
 //echo "<td>" . "<input type=submit name=add value=add" . " </td>";
 echo "<td>" . "<button class='btn btn-info' type=submit name=add value=add>add</button>" . " </td>";
 echo "</form>";
